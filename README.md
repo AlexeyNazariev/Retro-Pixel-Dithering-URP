@@ -1,13 +1,19 @@
 ﻿# Retro Pixel Dither & PBR Toolkit for Unity URP
 
+<p align="center">
+  <img src="demo.gif" width="720" alt="Retro Pixel Dither & Procedural Rust PBR Demo">
+</p>
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Unity](https://img.shields.io/badge/Unity-2022.3%20%7C%20Unity%206-blue.svg)](https://unity.com/)
 [![RenderPipeline](https://img.shields.io/badge/URP-14.0%2B%20%2F%2017.0%2B-green.svg)](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@latest)
 [![RenderGraph Ready](https://img.shields.io/badge/API-RenderGraph%20Native-orange.svg)](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@latest)
+[![itch.io](https://img.shields.io/badge/itch.io-Alexey%20Nazariev-FA5C5C?logo=itchdotio&logoColor=white)](https://alexeynazariev.itch.io/)
 
 A production-ready graphics package for **Unity Universal Render Pipeline (URP)** combining authentic 90s retro visual processing (Bayer ordered dithering, resolution-locked pixelation, color depth quantization) with a procedural 3D object-space rust and scratched metal PBR surface shader.
 
-Built for boomer shooters, retro sci-fi, survival horror, and isometric RTS/RPG aesthetics (inspired by the visual style of *Diablo I/II*, *StarCraft*, *Fallout 1/2*, and early 3D PC titles).
+> 🎮 **Game Jam Origins & Live Demos:**  
+> This shader toolkit was engineered and field-tested during a Game Jam to achieve an authentic, dark, and gritty 90s industrial visual style without sacrificing modern URP lighting performance. Check out playable games and jams on **[Alexey Nazariev on itch.io](https://alexeynazariev.itch.io/)**.
 
 ---
 
@@ -47,6 +53,7 @@ Unity_Retro_Shaders/
 │   ├── RetroPixelRenderFeature.cs     # Unity 6 URP ScriptableRendererFeature (RenderGraph)
 │   ├── FanRotator.cs                  # Prop rotation utility component
 │   └── RTSCameraController.cs         # Tactical / RTS camera controller (New Input System)
+├── demo.gif                           # Gameplay visual demonstration
 ├── LICENSE                            # MIT License
 └── README.md                          # Documentation
 ```
