@@ -303,6 +303,7 @@ Shader "Custom/RealisticRustMetal"
             #pragma vertex ShadowPassVertex
             #pragma fragment ShadowPassFragment
             #pragma multi_compile_instancing
+            #pragma multi_compile_vertex _ _CASTING_PUNCTUAL_LIGHT_SHADOW
 
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Shadows.hlsl"
@@ -321,6 +322,7 @@ Shader "Custom/RealisticRustMetal"
             };
 
             float3 _LightDirection;
+            float3 _LightPosition;
 
             Varyings ShadowPassVertex(Attributes input)
             {
@@ -330,7 +332,15 @@ Shader "Custom/RealisticRustMetal"
 
                 float3 positionWS = TransformObjectToWorld(input.positionOS.xyz);
                 float3 normalWS = TransformObjectToWorldNormal(input.normalOS);
-                output.positionCS = TransformWorldToHClip(ApplyShadowBias(positionWS, normalWS, _LightDirection));
+
+                #if _CASTING_PUNCTUAL_LIGHT_SHADOW
+                    float3 lightDirectionWS = normalize(_LightPosition - positionWS);
+                #else
+                    float3 lightDirectionWS = _LightDirection;
+                #endif
+
+                output.positionCS = TransformWorldToHClip(ApplyShadowBias(positionWS, normalWS, lightDirectionWS));
+                output.positionCS = ApplyShadowClamping(output.positionCS);
                 return output;
             }
 
