@@ -1,4 +1,4 @@
-﻿# Retro Pixel Dither & PBR Toolkit for Unity URP
+# Retro Pixel Dither & PBR Toolkit for Unity URP
 
 <p align="center">
   <img src="demo.gif" width="720" alt="Retro Pixel Dither & Procedural Rust PBR Demo">
@@ -36,10 +36,6 @@ A production-ready graphics package for **Unity Universal Render Pipeline (URP)*
 * Fully implemented using the **Unity 6 RenderGraph API** (`RecordRenderGraph` + `AddRasterRenderPass` + `Blitter`).
 * Clean dual-pass raster blit workflow ensuring zero frame buffer feedback loops and proper integration with URP post-processing stacks.
 
-### 4. Gameplay Utility Scripts
-* **`FanRotator.cs`:** Multi-axis prop rotation with local/world space support, customizable speed, and smooth acceleration damping.
-* **`RTSCameraController.cs`:** Fixed-elevation tactical camera controller using the Unity New Input System, featuring smooth interpolation, keyboard panning, and screen edge scrolling.
-
 ---
 
 ## File Structure
@@ -50,9 +46,7 @@ Unity_Retro_Shaders/
 │   ├── RetroPixelDither.shader        # Fullscreen Bayer dithering & pixelation HLSL shader
 │   └── RealisticRustMetal.shader      # Procedural PBR rust & scratched metal HLSL shader
 ├── Scripts/
-│   ├── RetroPixelRenderFeature.cs     # Unity 6 URP ScriptableRendererFeature (RenderGraph)
-│   ├── FanRotator.cs                  # Prop rotation utility component
-│   └── RTSCameraController.cs         # Tactical / RTS camera controller (New Input System)
+│   └── RetroPixelRenderFeature.cs     # Unity 6 URP ScriptableRendererFeature (RenderGraph)
 ├── demo.gif                           # Gameplay visual demonstration
 ├── LICENSE                            # MIT License
 └── README.md                          # Documentation
